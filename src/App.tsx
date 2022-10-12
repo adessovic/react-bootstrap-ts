@@ -1,11 +1,12 @@
 import React from 'react';
-import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
+import TopNavbar from './components/TopNavbar';
 function App() {
   return (
-    <div>
-      <h1>React & Bootstrap</h1>
-    </div>
+    <>
+      <TopNavbar />
+    </>
   );
 }
 
