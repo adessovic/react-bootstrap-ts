@@ -1,14 +1,34 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
 //import reportWebVitals from './reportWebVitals';
+import "bootstrap/dist/css/bootstrap.min.css";
+
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import ThemeProvider from "react-bootstrap/ThemeProvider";
+
+import Header from "./components/Header";
+import Signup from "./components/Signup";
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider breakpoints={["xxxl", "xxl", "xl", "lg", "md", "sm", "xs", "xxs"]} minBreakpoint="xxs">
+
+      <Router>
+        <Header />
+
+        <Routes>
+          <Route path="/" element={<App />} >
+            <Route path="signup" element={<Signup />} />
+          </Route>
+        </Routes>
+        
+      </Router>
+
+    </ThemeProvider>
   </React.StrictMode>
 );
 
